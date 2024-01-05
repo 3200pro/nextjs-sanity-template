@@ -34,14 +34,14 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const IndexRoute = async () => {
   const isEnabled = draftModeEnabled();
-  const initalData = await loadPageWithPosts({slug: "frontpage", limit: 2});
+  const initialData = await loadPageWithPosts({slug: "frontpage", limit: 2});
   const params = {slug: "frontpage", limit: 2};
 
   if (isEnabled) {
-    return <HomePagePreview initial={initalData} params={params} />;
+    return <HomePagePreview initial={initialData} params={params} />;
   }
 
-  return <HomePage data={initalData.data} />;
+  return <HomePage data={initialData.data} />;
 };
 
 export default IndexRoute;
